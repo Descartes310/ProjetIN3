@@ -1,0 +1,45 @@
+.grid-main
+{
+    margin-top: 5%;
+    height: 70%;
+    padding-left: 2%;
+    padding-right: 2%;    
+}
+.grid-main content1
+{
+    height: 100%;
+    padding-left: 0px;
+}
+.grid-main content2
+{
+    height: 100%;
+    padding : 0px;
+}
+.grid-main content2 p
+{
+    padding-top: 5%;
+}
+.grid-main a
+{
+    width: 100%;
+    margin-left: 0px;  
+    margin-top: 2%;      
+    height: 15%;
+}
+.uk-navbar
+{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.uk-navbar li a
+{
+    color: white;
+    font-size: 1.2em;
+}
+.uk-navbar li
+{
+    padding-top: 15px;
+}
+.footer p, h3
+{ 
+    color: white;
+}
