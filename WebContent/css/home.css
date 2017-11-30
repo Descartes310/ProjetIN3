@@ -1,18 +1,19 @@
-.grid-nav
+.uk-grid-main
 {
 	margin-top: -13px;
-	background-image: url('lights.png');
-	background-attachment: fixed;
-	height: 70%;
+	background-image: url('../img/centre.png');
+	backgroun-attachment: fixed;
+	height: 480px;
 }
 .uk-grid-main p
 {
 	color: white;
-	margin-top: 8%;
-	text-align: center;
-	font-size: 400%;
+	font-size:3.5em;
+	padding-top: 15%;
+	padding-left: 15%;
+	padding-right: 15%;
+	position: center;
 }
-
 .grid-nav-child
 {
 	padding-bottom: 1%;

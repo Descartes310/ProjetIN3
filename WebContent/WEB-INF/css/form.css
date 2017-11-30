@@ -30,3 +30,7 @@ button
 { 
     color: white;
 }
+form div span
+{
+	color: red;
+}

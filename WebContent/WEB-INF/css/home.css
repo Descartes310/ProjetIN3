@@ -1,7 +1,7 @@
-.grid-nav
+.grid-nav-main
 {
 	margin-top: -13px;
-	background-image: url("../img/yaounde.png"");
+	background-image:url('../img/centre.png');
 	background-attachment: fixed;
 	height: 70%;
 }

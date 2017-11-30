@@ -21,47 +21,9 @@ body
 .grid-nav
 {
   	padding-bottom: 4%;
-    background: no-repeat center fixed;
- 	 -webkit-background-size: cover; /* pour Chrome et Safari */
- 	 -moz-background-size: cover; /* pour Firefox */
-  	 -o-background-size: cover; /* pour Opera */
- 	 background-size: cover;
-   	 animation: changeBackground 14s infinite;
-  	 -webkit-animation: changeBackground 14s infinite;
-
+    background-image: url("../img/garoua.png");
+    background-attachement: fixed;
 }
-
-
-
-@keyframes changeBackground
-{
-    0%
-    {
-         background-image: url("../img/garoua.png");   
-    }
-    100%
-    {
-         background-image: url("../img/kribi.png");   
-    }
-
-}
-
-@-webkit-keyframes changeBackground
-{
-    0%
-    {
-         background-image: url("../img/garoua.png");   
-	}
-    100%
-    {
-         background-image: url("../img/kribi.png");   
-    }
-
-}
-
-
-
-
 
 .grid-nav img
 {
@@ -78,7 +40,7 @@ body
 .grid-nav nav li a
 {
 	color: white;
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 .first-item
@@ -90,7 +52,7 @@ body
 	padding-top: 15px;
 }
 
-.search
+form .row
 {
 	margin-left: 10%;
 	margin-top: 4%;	
@@ -120,7 +82,7 @@ form input[type="text"]
     height: 10%;
 
 }
-.search-button button
+.btn
 {
 	margin-left: 3%;
 	padding:2%;

@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Index de la page</title>
+		<title>Mon compte</title>
 		<link rel="stylesheet" type="text/css" href="uikit/css/uikit.css">			
 		<link rel="stylesheet" type="text/css" href="css/materialize.css">
 		<link rel="stylesheet" type="text/css" href="css/animate.css">
@@ -13,10 +13,35 @@
          <link rel="stylesheet" type="text/css" href="css/icons.css"/>
          <link rel="stylesheet" type="text/css" href="css/css.css"/>                  
 		  <script src="js/jquery.min.js"></script>	
-        <script src="js/uikit/js/uikit.js"></script>		
+        <script src="uikit/js/uikit.js"></script>		
         <script src="js/materialize.js"></script>		
 		<script src="js/live.js"></script>	
 		<link rel="stylesheet" type="text/css" href="css/myaccount.css">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            	$('#postLogement').click(function(){
+            		$.ajax({ 
+            			type: 'GET',
+            			url: 'ActionServlet',
+            			success: function(result){
+            				 document.getElementById("content1").innerHTML = result;
+            			}
+            			
+            		});
+            	});
+            	$('#mesLogements').click(function(){
+            		$.ajax({ 
+            			type: 'GET',
+            			url: 'MesLogement',
+            			success: function(result){
+            				 document.getElementById("content1").innerHTML = result;
+            			}
+            			
+            		});
+            	});
+            });
+        </script>
 	</head>
 
 	<body>
@@ -29,10 +54,10 @@
 								</ul>
 								<div class="uk-navbar-flip">
 									<ul class="uk-navbar-nav">
-										<li><a href="">Contacter-nous</a></li>
-										   <li><a href="">Mon compte											</a></li>
-											<li><a href="">Rechercher</a></li>											
-										   <li><a href="">Connexion</a></li>
+										<li><a href="Accueill">Accueill</a></li>
+										   <li><a href="Compte">Mon compte											</a></li>
+											<li><a href="index.jsp">Rechercher</a></li>											
+										   <li><a href="Connexion">Deconnexion</a></li>
 			
 									</ul>
 								</div>
@@ -40,95 +65,59 @@
 					</div>
             </div>
             <div class="uk-grid grid-main">
-                <div class="uk-width-3-4 content1">
-					<div class="uk-width-1-1">
-						<div class="row">
-							<form class="col s10">
-							  <div class="row">
-								<div class="input-field col s6">
-								  <input id="first_name" type="text" class="validate">
-								  <label for="first_name">Nom</label>
-								</div>
-								<div class="input-field col s6">
-								  <input id="last_name" type="text" class="validate">
-								  <label for="last_name">Prenom</label>
-								</div>
-							  </div>    
-							  <div class="row">
-									<div class="input-field col s6">
-									  <input id="first_name" type="text" class="validate">
-									  <label for="first_name">E-mail</label>
-									</div>
-									<div class="input-field col s6">
-									  <input id="last_name" type="text" class="validate">
-									  <label for="last_name">Telephone</label>
-									</div>
-								  </div> 
-							  <div class="row">
-									<div class="input-field col s6">
-									  <input id="first_name" type="text" class="validate">
-									  <label for="first_name">Login</label>
-									</div>
-									<div class="input-field col s6">
-									  <input id="last_name" type="text" class="validate datepicker">
-									  <label for="last_name">Date naissance</label>
-									</div>
-								  </div>
-								  <div class="row">
-										<div class="input-field col s6">
-										  <input id="first_name" type="password" class="validate">
-										  <label for="first_name">Mot de passe</label>
-										</div>
-										<div class="input-field col s6">
-										  <input id="last_name" type="password" class="validate">
-										  <label for="last_name">Confirmez mot de passe</label>
-										</div>
-									  </div>   
-			
-							 <button class="btn waves-effect waves-light" type="submit" name="action">Envoyer
-							</button>
-											
-							</form>
-						  </div>
-	
+                <div class="uk-width-large-3-4 uk-width-medium-3-4 uk-width-small-3-4 content1" id="content1">
+					<%@ include file="/mesInfos.jsp" %>
 				</div>
-				</div>
-                <div class="uk-width-1-4 content2" style="background-color:rgba(0, 0, 0, 0.3); padding-left:0%;">
-					<p style="margin-top:13%; color:white; font-weight:bold; font-size:2.0em;">TABLEAU DE BORD</p>
+                <div class="uk-width-large-1-4 uk-width-medium-1-4 uk-width-small-1-4 content2" style="background-color:rgba(0, 0, 0, 0.0); padding-left:0%;">
 					<br>
-					<a class="waves-effect waves-light btn">Souscription aux notifs</a>
-					<a class="waves-effect waves-light btn">Comptes paiement</a>
-					<a class="waves-effect waves-light btn">Devenir bailleur</a>
+					<a href="#notifications" data-uk-modal class="waves-effect waves-light btn">Souscription aux notifs <div class="uk-badge uk-badge-notification uk-badge-danger"> 1</div></a>
+					<a class="waves-effect waves-light btn" id="mesLogements">Mes logements</a>
+					<a class="waves-effect waves-light btn" id="postLogement"">Poster un logement</a>
+					<a class="waves-effect waves-light btn">Mes informations</a>
 					<a class="waves-effect waves-light btn">Supprimer compte</a>
 				</div>
 			</div>
 			
-            <div class="uk-block uk-block-muted footer" style="background-color:rgba(0, 0, 0, 0.7); color: white; z-index:73; width:100%; margin-top:2%;">
-				
-																				<div class="uk-container">
-				
-																				<h3>Block</h3>
-				
-																						<div class="uk-grid uk-grid-match" data-uk-grid-margin="">
-																								<div class="uk-width-medium-1-3">
-																										<div class="uk-panel">
-																												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-																										</div>
-																								</div>
-																								<div class="uk-width-medium-1-3">
-																										<div class="uk-panel">
-																												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-																										</div>
-																								</div>
-																								<div class="uk-width-medium-1-3">
-																										<div class="uk-panel">
-																												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-																										</div>
-																								</div>
-																						</div>
-				
-																				</div>
-				
+		<%@ include file="footer.jsp" %>
+		
+		<div id="notifications" class="uk-modal" style="width:100%;">
+			<div class="uk-modal-dialog">
+				<a class="uk-modal-close uk-close"></a>
+				<p style="margin-top: 5%; font-size: 2.7em; position: center;">Souscrire a un forfait</p>
+				<p>Cela vous permettra d'etre informe en temps reel et par message de tout les logements poste dans votre quartier, ville ou region. (Le paiement doit ce faire avec le numero beneficiaire )</p>
+				<div class="row">
+					<form action="Notification" method="post" class="col s12">
+						<p>
+					      <input class="with-gap" name="notif" type="radio" id="standard"  />
+					      <label for="standard">Forfait standard a 500 Fcfa (duree d'une semaine)</label>
+					    </p>
+					    <p>
+					      <input class="with-gap" name="notif" type="radio" id="populaire"  />
+					      <label for="populaire">Forfait populaire a 1500 Fcfa (duree d'un mois)</label>
+					    </p>
+					    <p>
+					      <input class="with-gap" name="notif" type="radio" id="premium"  />
+					      <label for="premium">Forfait prenium a 10000 Fcfa (duree d'un an)</label>
+					    </p>
+					    <div class="row">
+					        <div class="input-field col s6">
+					          <input id="telNotif" name="telNotif" type="text" class="validate">
+					          <label for="first_name">Numero de telephone beneficiaire</label>
+					        </div>
+					    </div>
+						<button class="btn waves-effect waves-light" type="submit" name="action">
+						Souscrire
+                        </button>
+					</form>
+				</div>
+			</div>
 		</div>
+		<div id="comptePaiement" class="uk-modal" style="width:100%;">
+			<div class="uk-modal-dialog">
+				<a class="uk-modal-close uk-close"></a>
+				<img src="img/yaounde.png">
+			</div>
+		</div>
+
 	</body>
 </html>

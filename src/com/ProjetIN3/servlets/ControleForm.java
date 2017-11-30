@@ -5,22 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Compte
+ * Servlet implementation class ControleForm
  */
-@WebServlet("/Compte")
-public class Compte extends HttpServlet {
+//@WebServlet("/ControleForm")
+public class ControleForm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+      
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Compte() {
+    public ControleForm() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,8 +28,8 @@ public class Compte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		this.getServletContext().getRequestDispatcher("/WEB-INF/compte.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -108,12 +107,12 @@ public class Compte extends HttpServlet {
 		if ( erreurs.isEmpty() )
 		{
 			this.getServletContext().getRequestDispatcher("/hello.jsp").forward(request, response);
-		} 
+		}
 		else 
 		{
 			request.setAttribute( "Erreurs", erreurs );
-			request.setAttribute( "client", client );
-			this.getServletContext().getRequestDispatcher("/WEB-INF/compte.jsp").forward(request, response);
+			request.setAttribute( "Client", client );
+			this.getServletContext().getRequestDispatcher("/WEB-INF/inscription.jsp").forward(request, response);
 		}
 
 		} 
@@ -126,8 +125,6 @@ public class Compte extends HttpServlet {
 					{
 						throw new Exception( "Mail incorrect." );
 					}
-			//	else
-		//			client.put( "mailClient", mailClient );
 			}
 			else
 			{
@@ -145,13 +142,10 @@ public class Compte extends HttpServlet {
 					throw new Exception("mots de passes différents.");
 					} 
 					else 
-					{
+					
 					if (passwdClient.length()<3) 
 					{
 					throw new Exception("Mot de passe trop court.");
-					}
-				//	else
-					//	client.put( "passwdClient", passwdClient );
 					}
 			} 
 			else 
@@ -167,8 +161,6 @@ public class Compte extends HttpServlet {
 				{
 				throw new Exception( "Nom invalide." );
 				}
-				//else
-					//client.put( "nomClient", nomClient );
 			}
 			else
 			{
@@ -183,8 +175,6 @@ public class Compte extends HttpServlet {
 				{
 				throw new Exception( "Date invalide." );
 				}
-			//	else
-				//	client.put( "dateClient", dateClient );
 			}
 			else
 			{
@@ -199,8 +189,6 @@ public class Compte extends HttpServlet {
 				{
 				throw new Exception( "Prenom invalide." );
 				}
-				//else
-					//client.put( "prenomClient", prenomClient );
 			}
 			else
 			{
@@ -215,8 +203,6 @@ public class Compte extends HttpServlet {
 				{
 				throw new Exception( "Login invalide." );
 				}
-			//	else
-				//	client.put( "loginClient", loginClient );
 			}
 			else
 			{
@@ -232,8 +218,6 @@ public class Compte extends HttpServlet {
 				{
 				throw new Exception( "Telephone invalide." );
 				}
-			//	else
-				//	client.put( "telClient", telClient );
 			}
 			else
 			{

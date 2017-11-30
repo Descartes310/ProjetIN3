@@ -19,12 +19,21 @@
 {
     padding-top: 5%;
 }
+.grid-main content2 a: hover
+{
+text-decoration:none;
+
+}
 .grid-main a
 {
     width: 100%;
     margin-left: 0px;  
     margin-top: 2%;      
     height: 15%;
+}
+.grid-main a : hover
+{
+text-decoration: none;
 }
 .uk-navbar
 {
@@ -42,4 +51,8 @@
 .footer p, h3
 { 
     color: white;
+}
+.btn: hover
+{
+	text-decoration: none;
 }
