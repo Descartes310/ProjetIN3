@@ -40,6 +40,16 @@
             			
             		});
             	});
+            	$('#mesInfos').click(function(){
+            		$.ajax({ 
+            			type: 'GET',
+            			url: 'MesInfos',
+            			success: function(result){
+            				 document.getElementById("content1").innerHTML = result;
+            			}
+            			
+            		});
+            	});
             });
         </script>
 	</head>
@@ -68,12 +78,12 @@
                 <div class="uk-width-large-3-4 uk-width-medium-3-4 uk-width-small-3-4 content1" id="content1">
 					<%@ include file="/mesInfos.jsp" %>
 				</div>
-                <div class="uk-width-large-1-4 uk-width-medium-1-4 uk-width-small-1-4 content2" style="background-color:rgba(0, 0, 0, 0.0); padding-left:0%;">
+                <div class="uk-width-large-1-4 uk-width-medium-1-4 uk-width-small-1-4 content2" style="background-color:rgba(0, 0, 0, 0.0); padding-left:0%; min-height: 500px; max-height: 500px;">
 					<br>
 					<a href="#notifications" data-uk-modal class="waves-effect waves-light btn">Souscription aux notifs <div class="uk-badge uk-badge-notification uk-badge-danger"> 1</div></a>
 					<a class="waves-effect waves-light btn" id="mesLogements">Mes logements</a>
 					<a class="waves-effect waves-light btn" id="postLogement"">Poster un logement</a>
-					<a class="waves-effect waves-light btn">Mes informations</a>
+					<a class="waves-effect waves-light btn" id="mesInfos">Mes informations</a>
 					<a class="waves-effect waves-light btn">Supprimer compte</a>
 				</div>
 			</div>

@@ -27,7 +27,7 @@ public class MesLogement extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    response.setContentType("text/plain"); 
-	    this.getServletContext().getRequestDispatcher("/mesLogement.jsp").forward(request, response);
+	    this.getServletContext().getRequestDispatcher("/mesLogements.jsp").forward(request, response);
 
 	}
 
